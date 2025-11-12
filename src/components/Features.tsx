@@ -1,58 +1,65 @@
+import { memo, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
-import { 
-  Zap, 
-  Shield, 
-  Activity, 
-  GitBranch, 
-  Database, 
+import {
+  Zap,
+  Shield,
+  Activity,
+  GitBranch,
+  Database,
   Cloud,
   Lock,
   BarChart3,
   Workflow
 } from "lucide-react";
 
-const Features = () => {
-  const { t } = useTranslation();
+const Features = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const features = [
+  const features = useMemo(() => [
     {
+      id: 'workflow',
       icon: Workflow,
       title: t('features.workflow.title'),
       description: t('features.workflow.description'),
       color: "text-primary"
     },
     {
+      id: 'performance',
       icon: Zap,
       title: t('features.performance.title'),
       description: t('features.performance.description'),
       color: "text-accent"
     },
     {
+      id: 'gitops',
       icon: GitBranch,
       title: t('features.gitops.title'),
       description: t('features.gitops.description'),
       color: "text-success"
     },
     {
+      id: 'security',
       icon: Shield,
       title: t('features.security.title'),
       description: t('features.security.description'),
       color: "text-destructive"
     },
     {
+      id: 'monitoring',
       icon: Activity,
       title: t('features.monitoring.title'),
       description: t('features.monitoring.description'),
       color: "text-primary"
     },
     {
+      id: 'scale',
       icon: Database,
       title: t('features.scale.title'),
       description: t('features.scale.description'),
       color: "text-warning"
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section id="features" className="py-24 px-6 bg-card/50">
@@ -67,9 +74,9 @@ const Features = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
+          {features.map((feature) => (
+            <Card
+              key={feature.id}
               className="p-6 hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 bg-card border-border/50"
             >
               <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 ${feature.color}`}>
@@ -83,6 +90,8 @@ const Features = () => {
       </div>
     </section>
   );
-};
+});
+
+Features.displayName = 'Features';
 
 export default Features;

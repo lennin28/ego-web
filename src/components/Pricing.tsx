@@ -1,14 +1,16 @@
+import { memo, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const Pricing = () => {
-  const { t } = useTranslation();
+const Pricing = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const plans = [
+  const plans = useMemo(() => [
     {
+      id: 'starter',
       name: t('pricing.starter.name'),
       price: t('pricing.starter.price'),
       period: t('pricing.starter.period'),
@@ -18,6 +20,7 @@ const Pricing = () => {
       cta: t('pricing.starter.cta')
     },
     {
+      id: 'professional',
       name: t('pricing.professional.name'),
       price: t('pricing.professional.price'),
       period: t('pricing.professional.period'),
@@ -28,6 +31,7 @@ const Pricing = () => {
       cta: t('pricing.professional.cta')
     },
     {
+      id: 'enterprise',
       name: t('pricing.enterprise.name'),
       price: t('pricing.enterprise.price'),
       description: t('pricing.enterprise.description'),
@@ -35,7 +39,7 @@ const Pricing = () => {
       features: t('pricing.enterprise.features', { returnObjects: true }) as string[],
       cta: t('pricing.enterprise.cta')
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section id="pricing" className="py-24 px-6">
@@ -50,12 +54,12 @@ const Pricing = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {plans.map((plan, index) => (
-            <Card 
-              key={index}
+          {plans.map((plan) => (
+            <Card
+              key={plan.id}
               className={`p-8 relative ${
-                plan.popular 
-                  ? 'border-primary shadow-glow bg-gradient-to-b from-card to-primary/5' 
+                plan.popular
+                  ? 'border-primary shadow-glow bg-gradient-to-b from-card to-primary/5'
                   : 'bg-card border-border/50'
               }`}
             >
@@ -88,8 +92,8 @@ const Pricing = () => {
               </Button>
 
               <div className="space-y-3">
-                {plan.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
+                {plan.features.map((feature) => (
+                  <div key={`${plan.id}-${feature}`} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-muted-foreground">{feature}</span>
                   </div>
@@ -107,6 +111,8 @@ const Pricing = () => {
       </div>
     </section>
   );
-};
+});
+
+Pricing.displayName = 'Pricing';
 
 export default Pricing;

@@ -1,18 +1,20 @@
+import { memo, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
-import { 
-  Rocket, 
-  Clock, 
-  DollarSign, 
-  Users, 
-  Zap 
+import {
+  Rocket,
+  Clock,
+  DollarSign,
+  Users,
+  Zap
 } from "lucide-react";
 
-const Solutions = () => {
-  const { t } = useTranslation();
+const Solutions = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const solutions = [
+  const solutions = useMemo(() => [
     {
+      id: 'deployment',
       icon: Rocket,
       title: t('solutions.deployment.title'),
       description: t('solutions.deployment.description'),
@@ -20,6 +22,7 @@ const Solutions = () => {
       color: "text-primary"
     },
     {
+      id: 'cost',
       icon: DollarSign,
       title: t('solutions.cost.title'),
       description: t('solutions.cost.description'),
@@ -27,6 +30,7 @@ const Solutions = () => {
       color: "text-success"
     },
     {
+      id: 'reliability',
       icon: Clock,
       title: t('solutions.reliability.title'),
       description: t('solutions.reliability.description'),
@@ -34,13 +38,14 @@ const Solutions = () => {
       color: "text-accent"
     },
     {
+      id: 'productivity',
       icon: Users,
       title: t('solutions.productivity.title'),
       description: t('solutions.productivity.description'),
       metric: t('solutions.productivity.metric'),
       color: "text-info"
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section className="py-24 px-6 bg-card/50">
@@ -55,9 +60,9 @@ const Solutions = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {solutions.map((item, index) => (
-            <Card 
-              key={index}
+          {solutions.map((item) => (
+            <Card
+              key={item.id}
               className="p-8 hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 bg-card border-border/50 group"
             >
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${item.color}`}>
@@ -99,6 +104,8 @@ const Solutions = () => {
       </div>
     </section>
   );
-};
+});
+
+Solutions.displayName = 'Solutions';
 
 export default Solutions;

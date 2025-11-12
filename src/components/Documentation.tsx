@@ -1,49 +1,56 @@
+import { memo, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Code2, Terminal, Boxes, FileText, Video } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const Documentation = () => {
-  const { t } = useTranslation();
+const Documentation = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const docCategories = [
+  const docCategories = useMemo(() => [
     {
+      id: 'getting-started',
       icon: BookOpen,
       title: t('documentation.gettingStarted.title'),
       description: t('documentation.gettingStarted.description'),
       color: "text-primary"
     },
     {
+      id: 'api',
       icon: Code2,
       title: t('documentation.api.title'),
       description: t('documentation.api.description'),
       color: "text-accent"
     },
     {
+      id: 'deployment',
       icon: Terminal,
       title: t('documentation.deployment.title'),
       description: t('documentation.deployment.description'),
       color: "text-success"
     },
     {
+      id: 'integrations',
       icon: Boxes,
       title: t('documentation.integrations.title'),
       description: t('documentation.integrations.description'),
       color: "text-warning"
     },
     {
+      id: 'best-practices',
       icon: FileText,
       title: t('documentation.bestPractices.title'),
       description: t('documentation.bestPractices.description'),
       color: "text-primary"
     },
     {
+      id: 'security',
       icon: Video,
       title: t('documentation.security.title'),
       description: t('documentation.security.description'),
       color: "text-accent"
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section id="docs" className="py-24 px-6 bg-card/50">
@@ -58,9 +65,9 @@ const Documentation = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {docCategories.map((category, index) => (
-            <Card 
-              key={index}
+          {docCategories.map((category) => (
+            <Card
+              key={category.id}
               className="p-6 hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 bg-card border-border/50 cursor-pointer group"
             >
               <div className={`w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 ${category.color} group-hover:scale-110 transition-transform`}>
@@ -133,7 +140,9 @@ const Documentation = () => {
       </div>
     </section>
   );
-};
+});
+
+Documentation.displayName = 'Documentation';
 
 const Check = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
