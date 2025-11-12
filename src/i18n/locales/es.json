@@ -1,0 +1,321 @@
+{
+  "announcement": {
+    "banner": "Cómo redujimos los costos de infraestructura en un 65% con la automatización de EGO"
+  },
+  "nav": {
+    "features": "Características",
+    "integrations": "Integraciones",
+    "pricing": "Precios",
+    "docs": "Documentación",
+    "signIn": "Iniciar Sesión",
+    "getStarted": "Comenzar"
+  },
+  "hero": {
+    "badge": "Presentamos EGO Platform",
+    "title": "Una Plataforma, Posibilidades Infinitas",
+    "subtitle": "Potencia tu empresa con una plataforma unificada que integra perfectamente desarrollo, despliegue y operaciones.",
+    "requestDemo": "Solicitar Demo",
+    "exploreFeatures": "Explorar Características",
+    "stats": {
+      "customizable": "100% Personalizable",
+      "integrations": "Integraciones Ilimitadas",
+      "gitops": "GitOps Nativo",
+      "multicloud": "Multi-Nube"
+    }
+  },
+  "features": {
+    "title": "Características",
+    "subtitle": "Todo lo que necesitas para tener éxito",
+    "workflow": {
+      "title": "Flujos de Trabajo Automatizados",
+      "description": "Optimiza tus operaciones con automatización inteligente"
+    },
+    "performance": {
+      "title": "Ultra Rápido",
+      "description": "Optimizado para máxima eficiencia y rendimiento"
+    },
+    "gitops": {
+      "title": "GitOps Nativo",
+      "description": "Infraestructura como código con control de versiones"
+    },
+    "security": {
+      "title": "Seguridad Empresarial",
+      "description": "Seguridad de nivel bancario con cumplimiento SOC 2"
+    },
+    "monitoring": {
+      "title": "Monitoreo en Tiempo Real",
+      "description": "Observabilidad e información completa"
+    },
+    "scale": {
+      "title": "Auto-escalado",
+      "description": "Escala automáticamente según la demanda"
+    }
+  },
+  "solutions": {
+    "title": "Soluciones",
+    "subtitle": "Potenciando Empresas Modernas",
+    "deployment": {
+      "title": "Despliegue Rápido",
+      "description": "Despliega aplicaciones en minutos, no horas",
+      "metric": "3x Más Rápido"
+    },
+    "cost": {
+      "title": "Optimización de Costos",
+      "description": "Reduce los costos de infraestructura automáticamente",
+      "metric": "65% Ahorro"
+    },
+    "reliability": {
+      "title": "Alta Disponibilidad",
+      "description": "SLA garantizado de 99.99% de tiempo de actividad",
+      "metric": "99.99% Disponibilidad"
+    },
+    "productivity": {
+      "title": "Experiencia del Desarrollador",
+      "description": "Herramientas que los desarrolladores aman usar",
+      "metric": "10x Productividad"
+    },
+    "metrics": {
+      "title": "Transforma Tus Operaciones",
+      "deploy": "Despliega en Minutos",
+      "optimize": "Optimización de Costos",
+      "boost": "Impulso de Productividad"
+    }
+  },
+  "integrations": {
+    "title": "Integraciones",
+    "subtitle": "Conéctate perfectamente con tus herramientas favoritas",
+    "categories": {
+      "versionControl": "Control de Versiones",
+      "cicd": "CI/CD",
+      "gitops": "GitOps",
+      "container": "Plataforma de Contenedores",
+      "cloud": "Proveedor de Nube",
+      "orchestration": "Orquestación",
+      "monitoring": "Monitoreo",
+      "messaging": "Mensajería",
+      "database": "Base de Datos",
+      "autoscaling": "Auto-escalado",
+      "certificates": "Certificados",
+      "policy": "Políticas"
+    },
+    "github": "Integración perfecta con repositorios de GitHub para despliegues automatizados",
+    "azureDevops": "Ciclo de vida completo de DevOps con integración de Azure",
+    "aws": "Gestión completa de infraestructura en la nube de AWS",
+    "argocd": "Entrega continua declarativa GitOps para Kubernetes",
+    "docker": "Orquestación y gestión de contenedores",
+    "azure": "Integración de servicios en la nube de Microsoft Azure",
+    "kubernetes": "Despliegue y escalado nativo de Kubernetes",
+    "prometheus": "Métricas avanzadas y monitoreo",
+    "kafka": "Transmisión de eventos y procesamiento de mensajes",
+    "postgres": "Gestión de base de datos PostgreSQL",
+    "keda": "Auto-escalado impulsado por eventos de Kubernetes para cargas de trabajo",
+    "certManager": "Gestión automatizada de certificados TLS",
+    "opa": "Aplicación de políticas para clústeres de Kubernetes"
+  },
+  "pricing": {
+    "title": "Precios",
+    "subtitle": "Elige el plan perfecto para tus necesidades",
+    "starter": {
+      "name": "Inicial",
+      "price": "$0",
+      "period": "mes",
+      "description": "Perfecto para equipos pequeños y proyectos",
+      "features": [
+        "Hasta 5 miembros del equipo",
+        "100 GB de almacenamiento",
+        "Soporte básico",
+        "Características principales",
+        "Acceso a la comunidad"
+      ],
+      "cta": "Comenzar"
+    },
+    "professional": {
+      "name": "Profesional",
+      "price": "$49",
+      "period": "mes",
+      "description": "Para equipos y negocios en crecimiento",
+      "badge": "Más Popular",
+      "features": [
+        "Hasta 50 miembros del equipo",
+        "1 TB de almacenamiento",
+        "Soporte prioritario",
+        "Características avanzadas",
+        "Integraciones personalizadas",
+        "Análisis avanzados",
+        "Acceso API"
+      ],
+      "cta": "Iniciar Prueba Gratuita"
+    },
+    "enterprise": {
+      "name": "Empresarial",
+      "price": "Personalizado",
+      "description": "Para grandes organizaciones con necesidades personalizadas",
+      "features": [
+        "Miembros ilimitados del equipo",
+        "Almacenamiento ilimitado",
+        "Soporte dedicado 24/7",
+        "Todas las características incluidas",
+        "Integraciones personalizadas",
+        "Seguridad avanzada",
+        "Garantía de SLA",
+        "Opción on-premise"
+      ],
+      "cta": "Contactar Ventas"
+    },
+    "compareFeatures": "Comparar todas las características en detalle"
+  },
+  "documentation": {
+    "title": "Documentación",
+    "subtitle": "Comienza rápidamente con nuestras guías completas",
+    "gettingStarted": {
+      "title": "Comenzando",
+      "description": "Guías rápidas de configuración e instalación"
+    },
+    "api": {
+      "title": "Referencia API",
+      "description": "Documentación completa de la API"
+    },
+    "deployment": {
+      "title": "Guía de Despliegue",
+      "description": "Despliega tus aplicaciones con confianza"
+    },
+    "integrations": {
+      "title": "Integraciones",
+      "description": "Conéctate con tus herramientas existentes"
+    },
+    "bestPractices": {
+      "title": "Mejores Prácticas",
+      "description": "Aprende de expertos de la industria"
+    },
+    "security": {
+      "title": "Seguridad",
+      "description": "Protege tu infraestructura"
+    },
+    "cta": {
+      "title": "¿Listo para Comenzar?",
+      "description": "Únete a miles de equipos que usan EGO Platform",
+      "browse": "Explorar Documentación",
+      "community": "Unirse a la Comunidad",
+      "stats": {
+        "articles": "Más de 500 Artículos",
+        "examples": "Más de 1000 Ejemplos de Código",
+        "videos": "Más de 100 Tutoriales en Video"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Empoderando empresas con soluciones de plataforma de próxima generación",
+    "product": {
+      "title": "Producto",
+      "features": "Características",
+      "integrations": "Integraciones",
+      "pricing": "Precios",
+      "documentation": "Documentación"
+    },
+    "resources": {
+      "title": "Recursos",
+      "blog": "Blog",
+      "guides": "Guías",
+      "help": "Centro de Ayuda",
+      "community": "Comunidad"
+    },
+    "company": {
+      "title": "Empresa",
+      "about": "Acerca de",
+      "careers": "Carreras",
+      "contact": "Contacto",
+      "partners": "Socios"
+    },
+    "copyright": "© 2024 EGO Platform. Todos los derechos reservados.",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "security": "Seguridad"
+  },
+  "demoRequest": {
+    "title": "Solicitar una Demo",
+    "description": "Completa el formulario a continuación y nuestro equipo se pondrá en contacto contigo en 24 horas.",
+    "form": {
+      "name": "Nombre Completo",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "juan@empresa.com",
+      "company": "Empresa",
+      "companyPlaceholder": "Tu Empresa S.A.",
+      "phone": "Número de Teléfono",
+      "phonePlaceholder": "+34 600 000 000",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tus necesidades...",
+      "submit": "Enviar Solicitud",
+      "submitting": "Enviando..."
+    },
+    "success": "¡Solicitud de demo enviada con éxito! Te contactaremos pronto.",
+    "error": "Error al enviar la solicitud de demo. Por favor, inténtalo de nuevo."
+  },
+  "docs": {
+    "title": "Documentación",
+    "subtitle": "Todo lo que necesitas saber sobre EGO Platform",
+    "search": "Buscar en la documentación...",
+    "sections": {
+      "gettingStarted": {
+        "title": "Comenzando",
+        "introduction": "Introducción",
+        "quickStart": "Inicio Rápido",
+        "installation": "Instalación"
+      },
+      "features": {
+        "title": "Características",
+        "workflows": "Flujos de Trabajo Automatizados",
+        "gitops": "Integración GitOps",
+        "monitoring": "Monitoreo y Observabilidad"
+      },
+      "integrations": {
+        "title": "Integraciones",
+        "github": "GitHub",
+        "kubernetes": "Kubernetes",
+        "aws": "AWS"
+      },
+      "api": {
+        "title": "Referencia API",
+        "authentication": "Autenticación",
+        "endpoints": "Endpoints",
+        "webhooks": "Webhooks"
+      }
+    },
+    "content": {
+      "introduction": {
+        "title": "Introducción",
+        "welcome": "Bienvenido a EGO Platform",
+        "description": "EGO Platform es una solución empresarial integral que reúne desarrollo, despliegue y operaciones en una plataforma unificada y potente.",
+        "whatYouLearn": "En esta documentación, aprenderás cómo:",
+        "points": [
+          "Configurar y preparar tu entorno",
+          "Desplegar aplicaciones con confianza",
+          "Integrar con tus herramientas existentes",
+          "Monitorear y optimizar tu infraestructura"
+        ]
+      },
+      "quickStart": {
+        "title": "Inicio Rápido",
+        "description": "Ponte en marcha con EGO Platform en minutos",
+        "step1Title": "Crea una cuenta y configura tu espacio de trabajo",
+        "step2Title": "Instala la herramienta CLI de EGO",
+        "step3Title": "Despliega tu primera aplicación"
+      },
+      "architecture": {
+        "title": "Descripción General de la Arquitectura",
+        "description": "EGO Platform está construido sobre una arquitectura moderna y nativa de la nube que garantiza escalabilidad, confiabilidad y rendimiento."
+      }
+    },
+    "cta": {
+      "title": "¿Necesitas Ayuda?",
+      "description": "Nuestro equipo está aquí para apoyarte en cada paso del camino",
+      "viewGuides": "Ver Guías",
+      "joinCommunity": "Unirse a la Comunidad"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "¡Ups! Página no encontrada",
+    "home": "Volver al Inicio"
+  }
+}
