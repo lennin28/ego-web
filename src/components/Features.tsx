@@ -1,21 +1,22 @@
+import { memo, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
-import { 
-  Zap, 
-  Shield, 
-  Activity, 
-  GitBranch, 
-  Database, 
+import {
+  Zap,
+  Shield,
+  Activity,
+  GitBranch,
+  Database,
   Cloud,
   Lock,
   BarChart3,
   Workflow
 } from "lucide-react";
 
-const Features = () => {
-  const { t } = useTranslation();
+const Features = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const features = [
+  const features = useMemo(() => [
     {
       id: 'workflow',
       icon: Workflow,
@@ -58,7 +59,7 @@ const Features = () => {
       description: t('features.scale.description'),
       color: "text-warning"
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section id="features" className="py-24 px-6 bg-card/50">
@@ -89,6 +90,8 @@ const Features = () => {
       </div>
     </section>
   );
-};
+});
+
+Features.displayName = 'Features';
 
 export default Features;

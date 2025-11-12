@@ -1,13 +1,14 @@
+import { memo, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const Pricing = () => {
-  const { t } = useTranslation();
+const Pricing = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const plans = [
+  const plans = useMemo(() => [
     {
       id: 'starter',
       name: t('pricing.starter.name'),
@@ -38,7 +39,7 @@ const Pricing = () => {
       features: t('pricing.enterprise.features', { returnObjects: true }) as string[],
       cta: t('pricing.enterprise.cta')
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section id="pricing" className="py-24 px-6">
@@ -110,6 +111,8 @@ const Pricing = () => {
       </div>
     </section>
   );
-};
+});
+
+Pricing.displayName = 'Pricing';
 
 export default Pricing;

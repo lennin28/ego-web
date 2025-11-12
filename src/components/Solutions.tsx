@@ -1,17 +1,18 @@
+import { memo, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
-import { 
-  Rocket, 
-  Clock, 
-  DollarSign, 
-  Users, 
-  Zap 
+import {
+  Rocket,
+  Clock,
+  DollarSign,
+  Users,
+  Zap
 } from "lucide-react";
 
-const Solutions = () => {
-  const { t } = useTranslation();
+const Solutions = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const solutions = [
+  const solutions = useMemo(() => [
     {
       id: 'deployment',
       icon: Rocket,
@@ -44,7 +45,7 @@ const Solutions = () => {
       metric: t('solutions.productivity.metric'),
       color: "text-info"
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section className="py-24 px-6 bg-card/50">
@@ -103,6 +104,8 @@ const Solutions = () => {
       </div>
     </section>
   );
-};
+});
+
+Solutions.displayName = 'Solutions';
 
 export default Solutions;

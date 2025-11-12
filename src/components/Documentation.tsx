@@ -1,12 +1,13 @@
+import { memo, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Code2, Terminal, Boxes, FileText, Video } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const Documentation = () => {
-  const { t } = useTranslation();
+const Documentation = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const docCategories = [
+  const docCategories = useMemo(() => [
     {
       id: 'getting-started',
       icon: BookOpen,
@@ -49,7 +50,7 @@ const Documentation = () => {
       description: t('documentation.security.description'),
       color: "text-accent"
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section id="docs" className="py-24 px-6 bg-card/50">
@@ -139,7 +140,9 @@ const Documentation = () => {
       </div>
     </section>
   );
-};
+});
+
+Documentation.displayName = 'Documentation';
 
 const Check = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

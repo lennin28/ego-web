@@ -1,11 +1,12 @@
+import { memo, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
 
-const Integrations = () => {
-  const { t } = useTranslation();
+const Integrations = memo(() => {
+  const { t, i18n } = useTranslation();
 
-  const integrations = [
+  const integrations = useMemo(() => [
     {
       id: 'github',
       name: "GitHub",
@@ -97,7 +98,7 @@ const Integrations = () => {
       description: t('integrations.opa'),
       logo: "https://landscape.cncf.io/logos/open-policy-agent-opa.svg"
     }
-  ];
+  ], [t, i18n.language]);
 
   return (
     <section id="integrations" className="py-24 px-6">
@@ -142,6 +143,8 @@ const Integrations = () => {
       </div>
     </section>
   );
-};
+});
+
+Integrations.displayName = 'Integrations';
 
 export default Integrations;
