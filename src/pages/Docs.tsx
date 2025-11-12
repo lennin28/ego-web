@@ -14,6 +14,7 @@ const Docs = () => {
 
   const docSections = [
     {
+      id: 'getting-started',
       title: t('docs.sections.gettingStarted.title'),
       icon: Home,
       items: [
@@ -23,6 +24,7 @@ const Docs = () => {
       ]
     },
     {
+      id: 'features',
       title: t('docs.sections.features.title'),
       icon: Book,
       items: [
@@ -32,6 +34,7 @@ const Docs = () => {
       ]
     },
     {
+      id: 'integrations',
       title: t('docs.sections.integrations.title'),
       icon: Zap,
       items: [
@@ -41,6 +44,7 @@ const Docs = () => {
       ]
     },
     {
+      id: 'api',
       title: t('docs.sections.api.title'),
       icon: Code,
       items: [
@@ -85,8 +89,8 @@ const Docs = () => {
           <aside className="lg:col-span-3">
             <ScrollArea className="h-[calc(100vh-300px)] pr-4">
               <nav className="space-y-6">
-                {docSections.map((section, idx) => (
-                  <div key={idx}>
+                {docSections.map((section) => (
+                  <div key={section.id}>
                     <div className="flex items-center gap-2 mb-3">
                       <section.icon className="w-5 h-5 text-primary" />
                       <h3 className="font-semibold text-sm uppercase tracking-wide text-foreground">
@@ -94,9 +98,9 @@ const Docs = () => {
                       </h3>
                     </div>
                     <ul className="space-y-2 ml-7 border-l border-border/50 pl-4">
-                      {section.items.map((item, itemIdx) => (
-                        <li key={itemIdx}>
-                          <a 
+                      {section.items.map((item) => (
+                        <li key={item.href}>
+                          <a
                             href={item.href}
                             className="text-sm text-muted-foreground hover:text-foreground transition-colors block py-1"
                           >
@@ -126,8 +130,8 @@ const Docs = () => {
                 
                 <h3 className="text-xl font-semibold mb-4">{t('docs.content.introduction.whatYouLearn')}</h3>
                 <ul className="space-y-3 text-muted-foreground">
-                  {(t('docs.content.introduction.points', { returnObjects: true }) as string[]).map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
+                  {(t('docs.content.introduction.points', { returnObjects: true }) as string[]).map((point) => (
+                    <li key={point} className="flex items-start gap-3">
                       <ChevronRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                       <span>{point}</span>
                     </li>

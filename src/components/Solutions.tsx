@@ -13,6 +13,7 @@ const Solutions = () => {
 
   const solutions = [
     {
+      id: 'deployment',
       icon: Rocket,
       title: t('solutions.deployment.title'),
       description: t('solutions.deployment.description'),
@@ -20,6 +21,7 @@ const Solutions = () => {
       color: "text-primary"
     },
     {
+      id: 'cost',
       icon: DollarSign,
       title: t('solutions.cost.title'),
       description: t('solutions.cost.description'),
@@ -27,6 +29,7 @@ const Solutions = () => {
       color: "text-success"
     },
     {
+      id: 'reliability',
       icon: Clock,
       title: t('solutions.reliability.title'),
       description: t('solutions.reliability.description'),
@@ -34,6 +37,7 @@ const Solutions = () => {
       color: "text-accent"
     },
     {
+      id: 'productivity',
       icon: Users,
       title: t('solutions.productivity.title'),
       description: t('solutions.productivity.description'),
@@ -55,9 +59,9 @@ const Solutions = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {solutions.map((item, index) => (
-            <Card 
-              key={index}
+          {solutions.map((item) => (
+            <Card
+              key={item.id}
               className="p-8 hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 bg-card border-border/50 group"
             >
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${item.color}`}>
